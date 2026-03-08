@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const philosophyItems = [
+  {
+    title: 'Чесність з клієнтом — фундамент',
+    description: 'Якщо AI не дасть ROI — скажу чесно. Не продаю рішення заради продажу.',
+  },
+  {
+    title: 'Результат важніше процесу',
+    description: 'Цифри, а не слайди. Окупність, а не "потенціал".',
+  },
+  {
+    title: 'Прості рішення часто ефективніші',
+    description: 'Не будую космічний корабель, коли потрібен велосипед.',
+  },
+  {
+    title: 'Автоматизація має звільняти час',
+    description: 'А не ускладнювати життя новими інструментами, які ніхто не використовує.',
+  },
+  {
+    title: 'Технологія — помічник, не заміна',
+    description: 'AI посилює людей при правильному підході. І руйнує процеси при неправильному.',
+  },
+];
+
+const services = [
+  {
+    icon: '01',
+    title: 'AI-агенти',
+    description: 'Чат-боти, FAQ-агенти, кваліфікація лідів, віртуальні продавці — 24/7 без вихідних.',
+  },
+  {
+    icon: '02',
+    title: 'CRM-впровадження',
+    description: 'Налаштування та інтеграція CRM з AI-агентами. Ліди більше не губляться.',
+  },
+  {
+    icon: '03',
+    title: 'Автоматизація процесів',
+    description: 'Рутинні задачі на автопілоті: звіти, комунікація, обробка замовлень.',
+  },
+  {
+    icon: '04',
+    title: 'AI-консалтинг',
+    description: 'Аудит процесів, розрахунок ROI, стратегія впровадження AI у вашому бізнесі.',
+  },
+];
+---
+
+<BaseLayout
+  title="Про мене — Андрій Мар'ясов | AI-автоматизація"
+  description="AI-консультант та CTO Auspex. Впроваджую AI-автоматизацію з гарантією окупності для бізнесів з 10-100 співробітниками."
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-20 md:py-32">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <p class="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+          AI-консультант &middot; CTO Auspex
+        </p>
+        <h1 class="text-4xl font-bold leading-tight md:text-6xl">
+          Андрій Мар'ясов
+        </h1>
+        <p class="mt-6 text-xl text-text-muted md:text-2xl">
+          Впроваджую AI-автоматизацію з гарантією окупності
+        </p>
+      </div>
+      <!-- Decorative gradient -->
+      <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-accent/5 blur-3xl"></div>
+    </section>
+
+    <!-- Story -->
+    <section class="py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-6">
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-8">
+          // Історія
+        </h2>
+        <div class="space-y-6 text-lg leading-relaxed text-text-muted">
+          <p class="text-2xl font-semibold text-text">
+            Я не AI-евангеліст. Я практик.
+          </p>
+          <p>
+            Мій шлях — від технічного бекграунду до розуміння, що справжня цінність AI не в хайпі, а в конкретних бізнес-результатах. Коли я побачив, як правильно налаштований AI-агент за тиждень зекономив клієнту стільки часу, скільки коштує цілий менеджер на рік — я зрозумів, чим хочу займатися.
+          </p>
+          <p>
+            З 2023 року я допомагаю бізнесам впроваджувати AI-автоматизацію з конкретними цифрами. Не "потенціал", не "в перспективі" — а вимірюваний ROI з першого місяця.
+          </p>
+          <p class="text-xl font-semibold text-text border-l-2 border-accent pl-6">
+            AI не замінює людей. AI посилює людей.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="py-16 md:py-24 border-t border-border/50">
+      <div class="mx-auto max-w-4xl px-6">
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-12">
+          // Філософія
+        </h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          {philosophyItems.map((item) => (
+            <div class="rounded-2xl border border-border/50 bg-bg-card p-6 transition-colors hover:border-accent/30">
+              <h3 class="text-lg font-semibold text-text mb-2">
+                {item.title}
+              </h3>
+              <p class="text-sm text-text-muted leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Superpower -->
+    <section class="py-16 md:py-24 border-t border-border/50">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-8">
+          // Суперсила
+        </h2>
+        <p class="text-2xl font-semibold leading-relaxed md:text-3xl">
+          Швидко розбираюся в інструментах, комбіную їх в ланцюжки автоматизації, говорю однією мовою з бізнесом.
+        </p>
+      </div>
+    </section>
+
+    <!-- What I Do -->
+    <section class="py-16 md:py-24 border-t border-border/50">
+      <div class="mx-auto max-w-4xl px-6">
+        <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-12">
+          // Що я роблю
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {services.map((service) => (
+            <div class="group rounded-2xl border border-border/50 bg-bg-card p-6 transition-colors hover:border-accent/30">
+              <span class="font-mono text-2xl font-bold text-accent/40 group-hover:text-accent transition-colors">
+                {service.icon}
+              </span>
+              <h3 class="mt-3 text-lg font-semibold text-text">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-sm text-text-muted leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-32 border-t border-border/50">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">
+          Готові до автоматизації?
+        </h2>
+        <p class="mt-4 text-lg text-text-muted">
+          Безкоштовна discovery-сесія — 30 хвилин. Розрахуємо ROI для вашого бізнесу.
+        </p>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-bg transition-colors hover:bg-accent-hover"
+        >
+          Замовити безкоштовний аудит
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

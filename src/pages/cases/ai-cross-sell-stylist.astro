@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const tags = ['Retail', 'Cross-sell', 'AI-стиліст'];
+---
+
+<BaseLayout
+  title="AI Cross-sell Stylist — персональний стиліст для мережі магазинів | Кейс"
+  description="AI-агент як персональний стиліст для 30+ магазинів одягу. Експертні рекомендації комплементарних товарів 24/7."
+>
+  <Header />
+  <main>
+    <article class="py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-6">
+
+        {/* Back link */}
+        <a
+          href="/cases"
+          class="inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-accent mb-12"
+        >
+          &larr; Усі кейси
+        </a>
+
+        {/* Header */}
+        <header class="mb-16">
+          <p class="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+            Мережа магазинів одягу &middot; 30+ локацій
+          </p>
+          <h1 class="text-4xl font-bold leading-tight md:text-5xl mb-6">
+            AI Cross-sell Stylist
+          </h1>
+          <p class="text-xl text-text-muted md:text-2xl leading-relaxed">
+            Персональний AI-стиліст у кожному магазині — 24/7
+          </p>
+        </header>
+
+        {/* Challenge */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Проблема
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Мережа з 30+ магазинів одягу. Хороший продавець знає яку сумку підібрати до сукні, який ремінь з тієї ж колекції. Але хороших продавців мало, і вони не працюють 24/7.
+            </p>
+          </div>
+        </section>
+
+        {/* Approach */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Підхід
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              AI-агент як персональний стиліст. Знає колекції, кольори, сезонність. Рекомендує аксесуари та комплементарні товари — не generic «related products», а експертні рекомендації.
+            </p>
+          </div>
+        </section>
+
+        {/* Numbers */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Цифри
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    Метрика
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    До
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-accent">
+                    Після
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Охоплення</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Залежить від зміни</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">24/7, всі магазини</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Якість рекомендацій</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Залежить від досвіду продавця</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Консистентна експертиза</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Cross-sell</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Випадковий</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Системний</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* What Went Wrong */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-error mb-6">
+            // Що пішло не так
+          </h2>
+          <div class="rounded-2xl border border-error/20 bg-error/5 p-6">
+            <p class="text-lg leading-relaxed text-text-muted">
+              Перші версії рекомендували занадто агресивно. Навчили агента розуміти коли пропонувати, а коли зупинитись — як досвідчений продавець.
+            </p>
+          </div>
+        </section>
+
+        {/* Result */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-success mb-6">
+            // Результат
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Кожен магазин тепер має «продавця», який знає всю колекцію, пам'ятає сезонність та вміє підібрати комплект.
+            </p>
+          </div>
+        </section>
+
+        {/* Tags */}
+        <div class="flex flex-wrap gap-2 mb-16 pt-8 border-t border-border/50">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-border px-4 py-1.5 text-sm text-text-muted">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <section class="rounded-2xl border border-accent/20 bg-accent-dim p-8 md:p-12 text-center">
+          <h2 class="text-2xl font-bold md:text-3xl mb-4">
+            Хочете такий самий результат?
+          </h2>
+          <p class="text-text-muted mb-8">
+            Безкоштовна discovery-сесія — 30 хвилин. Розрахуємо ROI для вашого бізнесу.
+          </p>
+          <a
+            href="/#contact"
+            class="inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-bg transition-colors hover:bg-accent-hover"
+          >
+            Замовити безкоштовний аудит
+          </a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,96 @@
+---
+import t from '../i18n/uk.json';
+
+const navLinks = [
+  { label: t.nav.cases, href: '/#cases' },
+  { label: t.nav.about, href: '/about' },
+  { label: t.nav.blog, href: '/blog' },
+  { label: t.nav.contact, href: '/contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-bg/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <a href="/" class="font-mono text-xl font-bold text-accent tracking-tight">
+      AM
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm text-text-muted transition-colors hover:text-text"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Desktop CTA -->
+    <a
+      href="/contact"
+      class="hidden md:inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover"
+    >
+      {t.hero.cta_primary.includes('аудит') ? 'Аудит' : 'Аудит'}
+    </a>
+
+    <!-- Mobile hamburger (CSS-only checkbox hack) -->
+    <label for="mobile-menu" class="hamburger relative z-50 flex md:hidden cursor-pointer p-2" aria-label="Toggle menu">
+      <input type="checkbox" id="mobile-menu" class="sr-only" />
+      <div class="flex flex-col gap-1.5">
+        <span class="bar bar-1 block h-0.5 w-6 bg-text transition-all duration-300"></span>
+        <span class="bar bar-2 block h-0.5 w-6 bg-text transition-all duration-300"></span>
+        <span class="bar bar-3 block h-0.5 w-6 bg-text transition-all duration-300"></span>
+      </div>
+    </label>
+  </nav>
+
+  <!-- Mobile menu panel -->
+  <div class="mobile-panel hidden md:hidden border-t border-border/50 bg-bg/95 backdrop-blur-xl">
+    <ul class="flex flex-col gap-1 px-6 py-6">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block py-3 text-lg text-text-muted transition-colors hover:text-text"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li class="mt-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover"
+        >
+          Аудит
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<!-- Spacer to offset fixed header -->
+<div class="h-16"></div>
+
+<style>
+  /* Hamburger animation: rotate into X when checked */
+  .hamburger:has(#mobile-menu:checked) .bar-1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger:has(#mobile-menu:checked) .bar-2 {
+    opacity: 0;
+  }
+  .hamburger:has(#mobile-menu:checked) .bar-3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Toggle mobile panel visibility */
+  header:has(#mobile-menu:checked) .mobile-panel {
+    display: block;
+  }
+</style>

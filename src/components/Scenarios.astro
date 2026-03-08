@@ -1,0 +1,56 @@
+---
+import t from '../i18n/uk.json';
+
+const scenarios = t.scenarios.items;
+---
+
+<section id="scenarios" class="py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="font-mono text-3xl font-bold text-text mb-12">
+      {t.scenarios.title}
+    </h2>
+
+    <!-- Desktop: table layout -->
+    <div class="hidden md:block rounded-2xl border border-border overflow-hidden">
+      <table class="w-full">
+        <thead>
+          <tr class="border-b border-border bg-bg-card">
+            <th class="px-6 py-4 text-left text-xs font-mono font-semibold text-text-muted uppercase tracking-wider">Сценарій</th>
+            <th class="px-6 py-4 text-left text-xs font-mono font-semibold text-text-muted uppercase tracking-wider">Терміни</th>
+            <th class="px-6 py-4 text-left text-xs font-mono font-semibold text-text-muted uppercase tracking-wider">Вартість</th>
+            <th class="px-6 py-4 text-left text-xs font-mono font-semibold text-text-muted uppercase tracking-wider">Опис</th>
+          </tr>
+        </thead>
+        <tbody>
+          {scenarios.map((s, i) => (
+            <tr class:list={[
+              'transition-colors hover:bg-bg-hover',
+              i < scenarios.length - 1 && 'border-b border-border/50',
+            ]}>
+              <td class="px-6 py-5 font-mono font-semibold text-text">{s.name}</td>
+              <td class="px-6 py-5 text-sm text-text-muted">{s.timeline}</td>
+              <td class="px-6 py-5 font-mono font-bold text-accent">{s.price}</td>
+              <td class="px-6 py-5 text-sm text-text-muted">{s.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile: cards -->
+    <div class="flex flex-col gap-4 md:hidden">
+      {scenarios.map((s) => (
+        <div class="rounded-2xl border border-border bg-bg-card p-5">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-mono font-semibold text-text">{s.name}</h3>
+            <span class="font-mono font-bold text-accent text-lg">{s.price}</span>
+          </div>
+          <p class="text-sm text-text-muted mb-2">{s.description}</p>
+          <span class="text-xs text-text-muted">
+            <span class="text-accent/60">&#9202;</span> {s.timeline}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

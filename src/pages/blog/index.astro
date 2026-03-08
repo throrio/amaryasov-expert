@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Блог — Андрій Мар'ясов"
+  description="Статті про AI-автоматизацію, агентів для бізнесу та практичні кейси впровадження"
+>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-4xl px-6 py-24">
+      <h1 class="font-mono text-4xl font-bold md:text-5xl">Блог</h1>
+      <p class="mt-4 text-lg text-text-muted">
+        Статті про AI-автоматизацію, агентів для бізнесу та практичні кейси впровадження
+      </p>
+
+      <div class="mt-16 rounded-xl border border-border/50 bg-bg-card p-12 text-center">
+        <p class="font-mono text-2xl text-text-muted">Скоро тут з'являться статті</p>
+        <p class="mt-4 text-text-muted">
+          Поки що найсвіжіший контент — у
+          <a href="https://t.me/andriimariasov" target="_blank" rel="noopener" class="text-accent hover:text-accent-hover underline">Telegram</a>
+          та
+          <a href="https://www.linkedin.com/in/andrii-mariasov" target="_blank" rel="noopener" class="text-accent hover:text-accent-hover underline">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

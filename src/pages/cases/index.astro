@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const cases = [
+  {
+    title: 'SmileClinic',
+    clientType: 'Стоматологічна мережа',
+    metric: '6 хв',
+    metricLabel: 'замість 2-3 днів на КП',
+    description: 'AI pipeline: OSINT-розвідка, персоналізований текст, PDF, слайди, лендинг — все за один запуск. Повна автоматизація продажів для клініки з 15 лікарями.',
+    tags: ['AI Pipeline', 'Claude Code', 'Автоматизація продажів'],
+    link: '/cases/smileclinic',
+  },
+  {
+    title: 'Zoho Migration',
+    clientType: 'Фінансова компанія',
+    metric: '0€/міс',
+    metricLabel: 'замість 50€/міс за PDF-сервіс',
+    description: 'Міграція фінансового калькулятора з Zoho Creator на сучасний стек. Повна функціональність, нативна генерація PDF, безлімітне масштабування.',
+    tags: ['Міграція', 'Legacy', 'Фінансовий калькулятор'],
+    link: '/cases/zoho-migration',
+  },
+  {
+    title: 'AI Cross-sell Stylist',
+    clientType: 'Мережа магазинів одягу',
+    metric: '30+',
+    metricLabel: 'магазинів з AI-стилістом 24/7',
+    description: 'Персональний AI-стиліст для мережі магазинів. Знає колекції, кольори, сезонність. Рекомендує комплементарні товари як досвідчений продавець.',
+    tags: ['Retail', 'Cross-sell', 'AI-стиліст'],
+    link: '/cases/ai-cross-sell-stylist',
+  },
+];
+---
+
+<BaseLayout
+  title="Кейси — Андрій Мар'ясов | AI-автоматизація"
+  description="Реальні проєкти з реальними цифрами. AI-автоматизація, міграція legacy-систем, розумні агенти для бізнесу."
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-20 md:py-32">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <p class="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+          // Портфоліо
+        </p>
+        <h1 class="text-4xl font-bold leading-tight md:text-6xl">
+          Кейси
+        </h1>
+        <p class="mt-6 text-xl text-text-muted md:text-2xl">
+          Реальні проєкти з реальними цифрами
+        </p>
+      </div>
+      <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-accent/5 blur-3xl"></div>
+    </section>
+
+    <!-- Cases Grid -->
+    <section class="pb-20 md:pb-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {cases.map((c) => (
+            <a
+              href={c.link}
+              class="group flex flex-col rounded-2xl border border-border bg-bg-card p-8 transition-all duration-300 hover:border-accent hover:bg-bg-hover"
+            >
+              {/* Metric */}
+              <div class="mb-6">
+                <span class="font-mono text-5xl font-bold text-accent">{c.metric}</span>
+                <p class="mt-1 text-sm text-accent/70">{c.metricLabel}</p>
+              </div>
+
+              {/* Title & Client Type */}
+              <h2 class="font-mono text-xl font-semibold text-text mb-1">
+                {c.title}
+              </h2>
+              <p class="text-xs font-mono uppercase tracking-wider text-text-muted mb-4">
+                {c.clientType}
+              </p>
+
+              {/* Description */}
+              <p class="text-sm text-text-muted leading-relaxed mb-6 flex-1">
+                {c.description}
+              </p>
+
+              {/* Tags */}
+              <div class="flex flex-wrap gap-2 mb-6">
+                {c.tags.map((tag) => (
+                  <span class="rounded-full border border-border px-3 py-1 text-xs text-text-muted">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <span class="inline-flex items-center text-sm font-medium text-accent transition-transform duration-300 group-hover:translate-x-1">
+                Читати кейс &rarr;
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-32 border-t border-border/50">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">
+          Хочете такий самий результат?
+        </h2>
+        <p class="mt-4 text-lg text-text-muted">
+          Безкоштовна discovery-сесія — 30 хвилин. Розрахуємо ROI для вашого бізнесу.
+        </p>
+        <a
+          href="/#contact"
+          class="mt-8 inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-bg transition-colors hover:bg-accent-hover"
+        >
+          Замовити безкоштовний аудит
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

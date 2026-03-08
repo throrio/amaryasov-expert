@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const tags = ['Міграція', 'Legacy', 'Фінансовий калькулятор'];
+---
+
+<BaseLayout
+  title="Zoho Migration — міграція фінансового калькулятора | Кейс"
+  description="Як мігрували фінансовий калькулятор з Zoho Creator на сучасний стек за дні замість місяців. Безлімітне масштабування, нативна PDF-генерація."
+>
+  <Header />
+  <main>
+    <article class="py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-6">
+
+        {/* Back link */}
+        <a
+          href="/cases"
+          class="inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-accent mb-12"
+        >
+          &larr; Усі кейси
+        </a>
+
+        {/* Header */}
+        <header class="mb-16">
+          <p class="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+            Фінансова компанія
+          </p>
+          <h1 class="text-4xl font-bold leading-tight md:text-5xl mb-6">
+            Zoho Migration
+          </h1>
+          <p class="text-xl text-text-muted md:text-2xl leading-relaxed">
+            З Zoho Creator на сучасний стек — за дні замість місяців
+          </p>
+        </header>
+
+        {/* Challenge */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Проблема
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Фінансовий калькулятор на Zoho Creator. Складна штука: розрахунки, таблиці, умови, формування PDF. Працювало, але повільно. Платформа дорожчала, масштабування з per-user pricing ставало нерентабельним.
+            </p>
+          </div>
+        </section>
+
+        {/* Approach */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Підхід
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Міграція на сучасний стек з Claude Code. Повна функціональність + нативна генерація PDF + безлімітне масштабування без per-user pricing.
+            </p>
+          </div>
+        </section>
+
+        {/* Numbers */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Цифри
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    Метрика
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    До
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-accent">
+                    Після
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">PDF-генерація</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Зовнішній сервіс ~50€/міс</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Вбудована, безкоштовно</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Масштабування</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Per-user pricing</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Безлімітне</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Час міграції</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Очікувалось місяці</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Дні</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">UI</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">Застарілий Zoho</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">Сучасний, швидший</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* What Went Wrong */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-error mb-6">
+            // Що пішло не так
+          </h2>
+          <div class="rounded-2xl border border-error/20 bg-error/5 p-6">
+            <p class="text-lg leading-relaxed text-text-muted">
+              Legacy-код мав недокументовані edge cases. Деякі формули працювали "магічно" — знадобився reverse engineering щоб зрозуміти логіку.
+            </p>
+          </div>
+        </section>
+
+        {/* Result */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-success mb-6">
+            // Результат
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Клієнт отримав сучасний інструмент який працює швидше, коштує менше, і масштабується без обмежень.
+            </p>
+          </div>
+        </section>
+
+        {/* Tags */}
+        <div class="flex flex-wrap gap-2 mb-16 pt-8 border-t border-border/50">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-border px-4 py-1.5 text-sm text-text-muted">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <section class="rounded-2xl border border-accent/20 bg-accent-dim p-8 md:p-12 text-center">
+          <h2 class="text-2xl font-bold md:text-3xl mb-4">
+            Хочете такий самий результат?
+          </h2>
+          <p class="text-text-muted mb-8">
+            Безкоштовна discovery-сесія — 30 хвилин. Розрахуємо ROI для вашого бізнесу.
+          </p>
+          <a
+            href="/#contact"
+            class="inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-bg transition-colors hover:bg-accent-hover"
+          >
+            Замовити безкоштовний аудит
+          </a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

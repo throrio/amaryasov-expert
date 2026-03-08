@@ -1,0 +1,33 @@
+---
+import uk from '../i18n/uk.json';
+
+const proof = uk.proof;
+const stats = [
+  proof.kp_time,
+  proof.savings,
+  proof.countries,
+  proof.payback,
+];
+
+function highlightNumbers(text: string): string {
+  return text.replace(
+    /(\d[\d\w/+-]*(?:\s*%)?)/g,
+    '<span class="text-accent font-bold">$1</span>'
+  );
+}
+---
+
+<section class="border-y border-border">
+  <div class="max-w-6xl mx-auto px-6 py-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+      {stats.map((stat, i) => (
+        <div class="flex items-center">
+          <p class="font-mono text-sm sm:text-base text-text-muted" set:html={highlightNumbers(stat)} />
+          {i < stats.length - 1 && (
+            <span class="hidden sm:block ml-6 w-px h-5 bg-border" />
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+---
+import t from '../i18n/uk.json';
+
+const cases = [
+  {
+    title: 'SmileClinic',
+    metric: '6 хв',
+    metricLabel: 'Повний пакет КП за 6 хвилин',
+    description: 'AI pipeline збирає OSINT-досьє, текст КП, PDF, слайди та лендинг за один запуск',
+    link: '/cases/smileclinic',
+  },
+  {
+    title: 'Zoho Migration',
+    metric: '50€/міс',
+    metricLabel: 'З Zoho Creator на сучасний стек за дні',
+    description: 'Міграція фінансового калькулятора з legacy-платформи без втрати функціональності',
+    link: '/cases/zoho-migration',
+  },
+  {
+    title: 'AI Cross-sell Stylist',
+    metric: '30+',
+    metricLabel: 'AI-стиліст для мережі магазинів',
+    description: 'Персональний стиліст який знає колекції, кольори та сезонність — у кожному магазині',
+    link: '/cases/ai-cross-sell-stylist',
+  },
+];
+---
+
+<section id="cases" class="py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="font-mono text-3xl font-bold text-text mb-12">
+      {t.cases.title}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {cases.map((c) => (
+        <a
+          href={c.link}
+          class="group block rounded-2xl border border-border bg-bg-card p-6 transition-all duration-300 hover:border-accent hover:bg-bg-hover"
+        >
+          <div class="mb-4">
+            <span class="font-mono text-4xl font-bold text-accent">{c.metric}</span>
+          </div>
+
+          <h3 class="font-mono text-lg font-semibold text-text mb-1">
+            {c.title}
+          </h3>
+
+          <p class="text-sm text-accent/70 mb-3">
+            {c.metricLabel}
+          </p>
+
+          <p class="text-sm text-text-muted leading-relaxed mb-6">
+            {c.description}
+          </p>
+
+          <span class="inline-flex items-center text-sm font-medium text-accent transition-transform duration-300 group-hover:translate-x-1">
+            {t.cases.read_more} &rarr;
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center">
+      <a
+        href="/cases"
+        class="inline-flex items-center gap-2 font-mono text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+      >
+        {t.cases.view_all} &rarr;
+      </a>
+    </div>
+  </div>
+</section>

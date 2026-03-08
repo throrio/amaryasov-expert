@@ -1,0 +1,54 @@
+---
+import uk from '../i18n/uk.json';
+
+const process = uk.process;
+---
+
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-mono text-3xl sm:text-4xl font-bold text-text mb-16">
+      {process.title}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+      {process.steps.map((step, i) => (
+        <div class="relative flex flex-col">
+          {/* Connector line (horizontal on desktop, vertical on mobile) */}
+          {i < process.steps.length - 1 && (
+            <>
+              {/* Desktop: horizontal line */}
+              <div class="hidden md:block absolute top-8 left-[calc(50%+24px)] w-[calc(100%-48px)] right-0">
+                <div class="h-px bg-border w-full" />
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-r border-t border-border rotate-45 -mr-1" />
+              </div>
+              {/* Mobile: vertical line */}
+              <div class="md:hidden absolute left-6 top-20 h-[calc(100%-40px)] w-px bg-border" />
+            </>
+          )}
+
+          <div class="relative bg-bg-card border border-border rounded-xl p-8 md:mx-2 mb-4 md:mb-0 hover:border-accent/30 transition-colors duration-300">
+            {/* Step number */}
+            <span class="font-mono text-4xl font-bold text-accent/30 mb-4 block">
+              {step.number}
+            </span>
+
+            {/* Title */}
+            <h3 class="font-mono text-xl font-bold text-text mb-3">
+              {step.title}
+            </h3>
+
+            {/* Duration badge */}
+            <span class="inline-block font-mono text-xs text-accent bg-accent-dim px-3 py-1 rounded-full mb-4">
+              {step.duration}
+            </span>
+
+            {/* Description */}
+            <p class="text-text-muted text-base leading-relaxed">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

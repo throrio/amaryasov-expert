@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const tags = ['AI Pipeline', 'Claude Code', 'Автоматизація продажів'];
+---
+
+<BaseLayout
+  title="SmileClinic — AI pipeline для автоматизації продажів | Кейс"
+  description="Як AI pipeline скоротив час створення КП з 2-3 днів до 6 хвилин для стоматологічної мережі з 15 лікарями."
+>
+  <Header />
+  <main>
+    <article class="py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-6">
+
+        {/* Back link */}
+        <a
+          href="/cases"
+          class="inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-accent mb-12"
+        >
+          &larr; Усі кейси
+        </a>
+
+        {/* Header */}
+        <header class="mb-16">
+          <p class="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+            Стоматологічна мережа &middot; Київ
+          </p>
+          <h1 class="text-4xl font-bold leading-tight md:text-5xl mb-6">
+            SmileClinic
+          </h1>
+          <p class="text-xl text-text-muted md:text-2xl leading-relaxed">
+            AI pipeline збирає повний пакет КП за 6 хвилин замість 2-3 днів
+          </p>
+        </header>
+
+        {/* Challenge */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Проблема
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Стоматологічна мережа: 3 клініки в Києві, 15 лікарів, 3000+ пацієнтів. Менеджери відповідають на одні й ті самі запитання щодня. CRM заповнюється «потім». Ліди з месенджерів губляться.
+            </p>
+          </div>
+        </section>
+
+        {/* Approach */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Підхід
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Claude Code з кастомним skill. AI pipeline: OSINT-розвідка по компанії &rarr; персоналізований текст КП &rarr; PDF &rarr; слайди через Gemini &rarr; landing page з аналітикою.
+            </p>
+            <p class="text-xl font-semibold text-text border-l-2 border-accent pl-6">
+              Все за один запуск.
+            </p>
+          </div>
+        </section>
+
+        {/* Numbers */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-accent mb-6">
+            // Цифри
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    Метрика
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-text-muted">
+                    До
+                  </th>
+                  <th class="border border-border/50 bg-bg-card px-6 py-3 text-left font-mono text-xs uppercase tracking-wider text-accent">
+                    Після
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Час на КП</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">2-3 дні</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">6 хвилин</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Вартість проєкту</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">—</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">142,000 грн</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Окупність</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">—</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">~3 місяці</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Економія на адміністраторах</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">0</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">432,000 грн/рік</td>
+                </tr>
+                <tr>
+                  <td class="border border-border/50 px-6 py-4 text-sm text-text">Записи у неробочий час</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm text-text-muted">0</td>
+                  <td class="border border-border/50 px-6 py-4 font-mono text-sm font-semibold text-accent">+50,000 грн/міс</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* What Went Wrong */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-error mb-6">
+            // Що пішло не так
+          </h2>
+          <div class="rounded-2xl border border-error/20 bg-error/5 p-6">
+            <p class="text-lg leading-relaxed text-text-muted">
+              Перші версії пайплайну генерували занадто generic тексти. Знадобилось кілька днів доробки промптів та структури skill, щоб отримати персоналізований результат.
+            </p>
+          </div>
+        </section>
+
+        {/* Result */}
+        <section class="mb-16">
+          <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-success mb-6">
+            // Результат
+          </h2>
+          <div class="text-lg leading-relaxed text-text-muted space-y-4">
+            <p>
+              Побудова пайплайну зайняла кілька днів. Але тепер кожне наступне КП збирається за 6 хвилин. OSINT, текст, PDF, слайди, лендинг — один запуск.
+            </p>
+          </div>
+        </section>
+
+        {/* Tags */}
+        <div class="flex flex-wrap gap-2 mb-16 pt-8 border-t border-border/50">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-border px-4 py-1.5 text-sm text-text-muted">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <section class="rounded-2xl border border-accent/20 bg-accent-dim p-8 md:p-12 text-center">
+          <h2 class="text-2xl font-bold md:text-3xl mb-4">
+            Хочете такий самий результат?
+          </h2>
+          <p class="text-text-muted mb-8">
+            Безкоштовна discovery-сесія — 30 хвилин. Розрахуємо ROI для вашого бізнесу.
+          </p>
+          <a
+            href="/#contact"
+            class="inline-flex items-center rounded-full bg-accent px-8 py-3 text-base font-semibold text-bg transition-colors hover:bg-accent-hover"
+          >
+            Замовити безкоштовний аудит
+          </a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
