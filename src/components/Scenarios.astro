@@ -11,7 +11,7 @@ const scenarios = t.scenarios.items;
     </h2>
 
     <!-- Desktop: table layout -->
-    <div class="hidden md:block rounded-2xl border border-border overflow-hidden">
+    <div class="hidden md:block rounded-2xl border border-border overflow-hidden" data-reveal>
       <table class="w-full">
         <thead>
           <tr class="border-b border-border bg-bg-card">
@@ -38,7 +38,7 @@ const scenarios = t.scenarios.items;
     </div>
 
     <!-- Mobile: cards -->
-    <div class="flex flex-col gap-4 md:hidden">
+    <div class="flex flex-col gap-4 md:hidden" data-reveal-stagger>
       {scenarios.map((s) => (
         <div class="rounded-2xl border border-border bg-bg-card p-5">
           <div class="flex items-start justify-between mb-3">

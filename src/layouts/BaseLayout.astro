@@ -64,5 +64,53 @@ const lang = Astro.currentLocale ?? 'uk';
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
+
+    <!-- Scroll reveal + counter animations -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      document.querySelectorAll('[data-reveal], [data-reveal-stagger]').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Counter animation
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target as HTMLElement;
+            const target = parseInt(el.dataset.counter || '0', 10);
+            const suffix = el.dataset.counterSuffix || '';
+            const duration = 1500;
+            const start = performance.now();
+
+            function tick(now: number) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(target * eased) + suffix;
+              if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll('[data-counter]').forEach((el) => {
+        counterObserver.observe(el);
+      });
+    </script>
   </body>
 </html>

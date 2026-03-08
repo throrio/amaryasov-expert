@@ -10,7 +10,7 @@ const process = uk.process;
       {process.title}
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0" data-reveal-stagger>
       {process.steps.map((step, i) => (
         <div class="relative flex flex-col">
           {/* Connector line (horizontal on desktop, vertical on mobile) */}
@@ -26,7 +26,7 @@ const process = uk.process;
             </>
           )}
 
-          <div class="relative bg-bg-card border border-border rounded-xl p-8 md:mx-2 mb-4 md:mb-0 hover:border-accent/30 transition-colors duration-300">
+          <div class="relative bg-bg-card border border-border rounded-xl p-8 md:mx-2 mb-4 md:mb-0 card-hover hover:border-accent/30">
             {/* Step number */}
             <span class="font-mono text-4xl font-bold text-accent/30 mb-4 block">
               {step.number}

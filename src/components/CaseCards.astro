@@ -32,11 +32,11 @@ const cases = [
       {t.cases.title}
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal-stagger>
       {cases.map((c) => (
         <a
           href={c.link}
-          class="group block rounded-2xl border border-border bg-bg-card p-6 transition-all duration-300 hover:border-accent hover:bg-bg-hover"
+          class="group block rounded-2xl border border-border bg-bg-card p-6 card-hover hover:border-accent hover:bg-bg-hover"
         >
           <div class="mb-4">
             <span class="font-mono text-4xl font-bold text-accent">{c.metric}</span>
