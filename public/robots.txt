@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andriimariasov.com/sitemap-index.xml
+Sitemap: https://amaryasov.expert/sitemap-index.xml

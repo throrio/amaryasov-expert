@@ -3,9 +3,12 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://andriimariasov.com',
+  site: 'https://amaryasov.expert',
+
   i18n: {
     defaultLocale: 'uk',
     locales: ['uk', 'en'],
@@ -13,8 +16,11 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   integrations: [sitemap()],
+  adapter: cloudflare(),
 });
