@@ -11,6 +11,8 @@ const {
   ogImage = '/og-default.jpg',
 } = Astro.props;
 
+import '../styles/global.css';
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const lang = Astro.currentLocale ?? 'uk';
 ---
@@ -49,11 +51,6 @@ const lang = Astro.currentLocale ?? 'uk';
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Global CSS -->
-    <style>
-      @import '../styles/global.css';
-    </style>
 
     <!-- Analytics -->
     <script

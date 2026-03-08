@@ -1,0 +1,48 @@
+---
+import uk from '../i18n/uk.json';
+
+const { title, segments } = uk.for_who;
+
+const icons: Record<string, string> = {
+  briefcase: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+  users: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  code: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+};
+---
+
+<section class="py-20">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="font-mono text-3xl font-bold text-text mb-12" data-reveal>
+      {title}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal-stagger>
+      {segments.map((seg) => (
+        <div class="group rounded-2xl border border-border bg-bg-card p-8 flex flex-col transition-colors hover:border-accent/40">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 text-accent transition-colors group-hover:bg-accent/20">
+            <Fragment set:html={icons[seg.icon]} />
+          </div>
+
+          <h3 class="font-mono text-lg font-semibold text-text mb-3">
+            {seg.title}
+          </h3>
+
+          <p class="text-sm text-text-muted leading-relaxed mb-2">
+            <span class="text-accent/70">&mdash;</span> {seg.pain}
+          </p>
+
+          <p class="text-sm text-text leading-relaxed mb-6 flex-1">
+            <span class="text-accent/70">&rarr;</span> {seg.value}
+          </p>
+
+          <a
+            href={seg.cta_link}
+            class="inline-flex items-center text-sm font-medium text-accent transition-transform duration-300 group-hover:translate-x-1"
+          >
+            {seg.cta} &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

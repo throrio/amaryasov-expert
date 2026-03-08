@@ -31,11 +31,22 @@ const guide = uk.guide;
           {guide.bio}
         </p>
 
-        <blockquote class="border-l-2 border-accent pl-5 py-1">
+        <blockquote class="border-l-2 border-accent pl-5 py-1 mb-8">
           <p class="text-text-muted italic text-base leading-relaxed">
             &laquo;{guide.philosophy}&raquo;
           </p>
         </blockquote>
+
+        {guide.credentials && (
+          <ul class="space-y-2">
+            {guide.credentials.map((item: string) => (
+              <li class="flex items-start gap-2 text-sm text-text-muted">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   </div>
